@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        lable 'target'
-    }
+    agent any
     
     environment {
         DOCKER_IMAGE_NAME = 'webapp'
