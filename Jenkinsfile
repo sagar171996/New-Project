@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DOCKER_IMAGE_NAME = 'webapp'
-        WAR_FILE_NAME = 'your-web-app.war'
+        WAR_FILE_NAME = 'webapp.war'
     }
     
     stages {
