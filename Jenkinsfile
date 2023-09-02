@@ -9,10 +9,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout($class:
+                checkout([$class:
 'GitSCM' , branches: [[name:
 'master']], userRemoteConfigs:
-[[url:'https://github.com/sagar171996/New-Project.git']])
+[[url:'https://github.com/sagar171996/New-Project.git']]])
             }
         }
         
