@@ -1,0 +1,28 @@
+Deployment.yml
+
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: k8s-deployment
+spec:
+  selector:
+    matchLabels:
+      app: k8s-devops-project
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app: k8s-devops-project
+    spec:
+      containers:
+      - name: k8s-container
+        image: vijaykumarg/simple-devops-img
+ imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
