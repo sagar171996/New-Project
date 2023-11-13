@@ -1,0 +1,19 @@
+# Use the official Tomcat image as the base image
+FROM tomcat:latest
+
+# Optionally, you can set environment variables for your application (e.g., database connections)
+# ENV MY_ENV_VARIABLE=value
+
+# Copy your Tomcat application (WAR file) into the container
+COPY your-application.war /usr/local/tomcat/webapps/
+
+# Optionally, if you need to provide custom Tomcat configuration, copy your configurations:
+# COPY server.xml /usr/local/tomcat/conf/
+
+# Expose the port that Tomcat will listen on (usually 8080 by default)
+EXPOSE 8080
+
+# Optionally, you can add more configurations or execute additional commands if needed
+
+# Start Tomcat when the container launches
+CMD ["catalina.sh", "run"]
